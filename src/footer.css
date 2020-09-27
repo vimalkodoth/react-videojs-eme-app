@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  background-image: "./icon.jpg";
+}
