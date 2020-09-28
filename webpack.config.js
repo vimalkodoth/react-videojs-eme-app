@@ -10,6 +10,13 @@ module.exports = ({ mode, presets } = { mode: "producton", presets: [] }) => {
       module: {
         rules: [
           {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+            },
+          },
+          {
             test: /\.jpe?g/,
             use: [
               {
@@ -20,12 +27,26 @@ module.exports = ({ mode, presets } = { mode: "producton", presets: [] }) => {
               },
             ],
           },
+          {
+            test: /\.html$/,
+            use: [
+              {
+                loader: "html-loader",
+              },
+            ],
+          },
         ],
       },
       output: {
         filename: "bundle.js",
       },
-      plugins: [new HtmlWebpackPlugin(), new webpack.ProgressPlugin()],
+      plugins: [
+        new HtmlWebpackPlugin({
+          template: "./src/index.html",
+          filename: "./index.html",
+        }),
+        new webpack.ProgressPlugin(),
+      ],
     },
     modeConfig(mode),
     presetConfig({ mode, presets })
