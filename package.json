@@ -11,7 +11,8 @@
     "prod:typescript": "npm run prod -- --env.presets typescript",
     "prod:analyze": "npm run prod -- --env.presets analyze",
     "prod:compress": "npm run prod -- --env.presets compress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "jsdoc -c jsdoc.conf.json",
+    "test": "jest"
   },
   "author": "Vimal Madhavan <vimalmadhav88@gmail.com> (https://codeinjavascript.com)",
   "license": "ISC",
@@ -24,11 +25,14 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "better-docs": "^2.3.2",
     "compression-webpack-plugin": "^6.0.2",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "html-loader": "^1.3.1",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.4.2",
+    "jsdoc": "^3.6.6",
     "mini-css-extract-plugin": "^0.11.2",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
@@ -37,5 +41,17 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.4"
-  }
+  },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 chromeAndroid versions",
+    "last 2 firefox versions",
+    "last 2 firefoxAndroid versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions",
+    "last 2 OperaMobile versions",
+    "ie >= 11"
+  ]
 }
