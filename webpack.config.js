@@ -3,6 +3,7 @@ const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
 const presetConfig = require("./build-utils/loadPresets");
+
 module.exports = ({ mode, presets } = { mode: "producton", presets: [] }) => {
   return merge(
     {
