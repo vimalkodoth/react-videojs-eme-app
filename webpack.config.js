@@ -18,7 +18,7 @@ module.exports = ({ mode, presets } = { mode: "producton", presets: [] }) => {
             },
           },
           {
-            test: /\.jpe?g/,
+            test: /\.(jpe?g|png|gif|svg)$/,
             use: [
               {
                 loader: "url-loader",

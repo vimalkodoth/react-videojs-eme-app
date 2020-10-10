@@ -12,11 +12,15 @@
     "prod:analyze": "npm run prod -- --env.presets analyze",
     "prod:compress": "npm run prod -- --env.presets compress",
     "docs": "jsdoc -c jsdoc.conf.json",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "author": "Vimal Madhavan <vimalmadhav88@gmail.com> (https://codeinjavascript.com)",
   "license": "ISC",
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.35",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -37,6 +41,7 @@
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.1.1",
     "postcss-loader": "^4.0.3",
+    "prettier": "2.1.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",

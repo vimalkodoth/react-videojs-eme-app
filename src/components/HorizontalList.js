@@ -59,7 +59,7 @@ class HorizontalList extends Component {
     this.setState((state) => ({ ...state, currentX: newScroll }));
   }
 
-  getLeftDx = () => {
+       getLeftDx =    () => {
     const {
       itemWidth,
       itemMargin,

@@ -2,10 +2,10 @@ const autoprefixer = require("autoprefixer");
 const CSSModuleLoader = {
   loader: "css-loader",
   options: {
-    modules: true,
-    localIdentName: "[name]_[local]_[hash:base64:5]",
+    modules: {
+      localIdentName: "[name]_[local]_[hash:base64:5]",
+    },
     importLoaders: 2,
-    camelCase: true,
     sourceMap: false, // turned off as causes delay
   },
 };
@@ -15,7 +15,7 @@ const CSSLoader = {
   options: {
     modules: "global",
     importLoaders: 2,
-    sourceMap: false, // turned off as causes delay
+    sourceMap: true, // turned off as causes delay
   },
 };
 const PostCSSLoader = {
@@ -32,6 +32,7 @@ const PostCSSLoader = {
   },
 };
 module.exports = () => ({
+  devtool: "#eval-source-map",
   module: {
     rules: [
       {
