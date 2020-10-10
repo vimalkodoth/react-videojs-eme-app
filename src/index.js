@@ -1,12 +1,28 @@
-import "./footer.css";
-import img from "./icon.jpg";
+import React from "react";
+import { render } from "react-dom";
+import "normalize.css";
+import "./styles.scss";
+import HorizontalList from "./components/HorizontalList";
+import myImage from "./static/img/M0003891_Fox.jpg";
 
-console.log(img);
-var element = document.createElement("img");
+const myImages = [];
+for (let i = 0; i < 45; i++) {
+  myImages[i] = myImage;
+}
+const App = () => {
+  return (
+    <div className="container">
+      <HorizontalList>
+        {myImages.map((image, i) => {
+          return (
+            <div className="item" key={i}>
+              <img src={image} />
+            </div>
+          );
+        })}
+      </HorizontalList>
+    </div>
+  );
+};
 
-element.src = img;
-
-element.width = 100;
-element.height = 100;
-
-document.body.append(element);
+render(<App />, document.querySelector("#container"));
