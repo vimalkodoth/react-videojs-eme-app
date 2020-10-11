@@ -1,7 +1,2 @@
-export const LOAD_DATA = 'LOAD_DATA';
-
-export function setSearchTerm(searchTerm) {
-    return {type: LOAD_DATA, payload: searchTerm}
-
-
-}
+export const FETCH_MOVIES_LIST = "FETCH_MOVIES_LIST";
+export const ADD_MOVIES_LIST = "ADD_MOVIES_LIST";
