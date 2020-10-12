@@ -4,6 +4,7 @@ import config from "./../config.json";
 import { fetchMoviesList } from "./../actionCreators";
 import HorizontalList from "./HorizontalList";
 import { Home } from "./pages";
+import { Link } from "react-router-dom";
 
 class MoviesList extends Component {
     componentDidMount() {
@@ -21,9 +22,12 @@ class MoviesList extends Component {
             return (
                 <HorizontalList key={list.id}>
                     {list.contents.data.map((movieItem) => {
+                        console.log(movieItem);
                         return (
-                            <div className="item" key={movieItem.numerical_id}>
-                                <img src={`${movieItem.images.artwork}`} />
+                            <div className="item" key={movieItem.id}>
+                                <Link to={`/details/${movieItem.id}`}>
+                                    <img src={`${movieItem.images.artwork}`} />
+                                </Link>
                             </div>
                         );
                     })}

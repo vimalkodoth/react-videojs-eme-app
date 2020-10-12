@@ -34,6 +34,17 @@ class HorizontalList extends Component {
                     parseFloat(listItemStyles.marginRight))
         );
     };
+
+    _onResize = () => {
+        console.log(
+            window.getComputedStyle(document.querySelector('li[data-item="1"'))
+                .width
+        );
+        requestAnimationFrame(() => {
+            this.updateDimensions();
+            this.repositionList();
+        });
+    };
     componentDidMount() {
         this.listStateRef.current = {};
         setTimeout(() => {
@@ -41,21 +52,11 @@ class HorizontalList extends Component {
                 this.updateDimensions();
             }
         }, 0);
-        window.addEventListener("resize", () => {
-            console.log(
-                window.getComputedStyle(
-                    document.querySelector('li[data-item="1"')
-                ).width
-            );
-            requestAnimationFrame(() => {
-                this.updateDimensions();
-                this.repositionList();
-            });
-        });
+        window.addEventListener("resize", this._onResize);
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.updateDimensions);
+        window.removeEventListener("resize", this._onResize);
     }
 
     repositionList() {
