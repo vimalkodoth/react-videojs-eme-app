@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { css } from "@emotion/core";
 import { Home, Details, Trailer } from "./components/pages";
 import store from "./store";
 import "normalize.css";
@@ -12,15 +13,26 @@ const App = () => {
         <BrowserRouter>
             <Provider store={store}>
                 <div className="app">
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/details/:id" component={Details} />
-                        <Route path="/trailer" component={Trailer} />
-                    </Switch>
+                    <div className="contents" css={ContentsStyle}>
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/details/:id" component={Details} />
+                            <Route path="/trailer" component={Trailer} />
+                        </Switch>
+                    </div>
                 </div>
             </Provider>
         </BrowserRouter>
     );
 };
+
+const ContentsStyle = css`
+    display: flex;
+    flex-direction: column;
+    background-color: #171717;
+    color: #fff;
+    min-height: 100%;
+    min-height: 100vh;
+`;
 
 render(<App />, document.querySelector("#container"));

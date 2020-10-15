@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { css } from "@emotion/core";
+import RoundedButton from "./RoundedButton";
 
 class DetailsHeader extends Component {
     render() {
@@ -9,17 +10,10 @@ class DetailsHeader extends Component {
 
         return (
             <div css={Header(snapshot)}>
-                {this.props.id}
-                {console.log(this.props.movieDetail)}
-                {/* <DetailsAction action={"trailer"}></DetailsAction> */}
-                <div className="rounded">
-                    <span className="action trailer">
-                        <span class="element">
-                            <span class="right-arrow"></span>
-                        </span>
-                        <span class="text">TRAILER</span>
-                    </span>
-                </div>
+                <RoundedButton
+                    title={"TRAILER"}
+                    to={"/trailer"}
+                ></RoundedButton>
                 <div className="meta-info">
                     <div className="title">{this.props.movieDetail.title}</div>
                 </div>
@@ -48,64 +42,24 @@ const Header = (image) => css`
         min-height: 530px;
         height: 660px;
     }
-    & .rounded {
-        position: absolute;
-        width: 100%;
-        top: 30%;
-        display: flex;
-        justify-content: center;
-        & .action {
-            color: #fff;
-            text-align: center;
-            & .text {
-                display: block;
-            }
-        }
-        & .element {
-            display: flex;
-            width: 100px;
-            background: #fff;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 5px;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-
-            & .right-arrow {
-                width: 0;
-                height: 0;
-                border-top: 25px solid transparent;
-                border-bottom: 25px solid transparent;
-                border-left: 40px solid #000;
-                display: block;
-                margin-left: 15px;
-                transition: border-left-color 0.45s ease-in;
-                &:hover,
-                &:focus {
-                    border-left-color: red;
-                }
-            }
-        }
-    }
     & .meta-info {
         position: absolute;
         width: 100%;
         bottom: 60px;
         display: flex;
         justify-content: center;
-
+        background-color: rgba(20, 20, 20, 0.5);
         & .title {
             font-size: 16px;
             color: #fff;
             @media (min-width: 300px) {
-                font-size: 23px;
+                font-size: 22px;
             }
             @media (min-width: 360px) {
-                font-size: 42px;
+                font-size: 36px;
             }
             @media (min-width: 680px) {
-                font-size: 60px;
+                font-size: 40px;
             }
         }
     }

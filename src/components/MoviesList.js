@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import config from "./../config.json";
 import { fetchMoviesList } from "./../actionCreators";
-import HorizontalList from "./HorizontalList";
-import { Home } from "./pages";
+import List from "./List";
 import { Link } from "react-router-dom";
 
 class MoviesList extends Component {
@@ -20,18 +18,25 @@ class MoviesList extends Component {
         if (!this.props.moviesList) return;
         return this.props.moviesList.map((list) => {
             return (
-                <HorizontalList key={list.id}>
-                    {list.contents.data.map((movieItem) => {
-                        console.log(movieItem);
-                        return (
-                            <div className="item" key={movieItem.id}>
-                                <Link to={`/details/${movieItem.id}`}>
-                                    <img src={`${movieItem.images.artwork}`} />
-                                </Link>
-                            </div>
-                        );
-                    })}
-                </HorizontalList>
+                //Flexible Compound Component
+                <List key={list.id}>
+                    <List.Title>
+                        <h2>{list.name}</h2>
+                    </List.Title>
+                    <List.Horizontal>
+                        {list.contents.data.map((movieItem) => {
+                            return (
+                                <div className="item" key={movieItem.id}>
+                                    <Link to={`/details/${movieItem.id}`}>
+                                        <img
+                                            src={`${movieItem.images.artwork}`}
+                                        />
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </List.Horizontal>
+                </List>
             );
         });
     }

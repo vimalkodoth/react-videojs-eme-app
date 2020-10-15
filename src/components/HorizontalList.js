@@ -235,6 +235,7 @@ const List = css`
 
 const ListInner = css`
     display: flex;
+    list-style: none;
     align-items: flex-start;
     align-items: stretch;
     height: 100%;
@@ -257,6 +258,14 @@ const ListItem = css`
 
     & .item {
         width: 100%;
+        border: 5px solid;
+        border-color: transparent;
+        &:hover {
+            border-color: yellow;
+        }
+        a {
+            display: flex;
+        }
     }
 
     img {
@@ -267,22 +276,24 @@ const ListItem = css`
 
 const Button = (props) => css`
     position: absolute;
+    cursor: pointer;
     top: 50%;
-    margin-top: -50px;
-    width: 50px;
-    height: 100px;
+    margin-top: -24px;
+    width: 48px;
+    height: 48px;
     background-image: url(${arrow});
     background-color: rgba(255, 255, 0, 0.75);
-    background-size: 90%;
+    background-size: 110%;
     background-repeat: no-repeat;
-    background-position: 0;
+    background-position: -3px -2px;
+    border-radius: 50%;
     ${props && props.prev
         ? `
-    left: 0;
-    transform: rotate(180deg);
+    left: 5px;
   `
         : `
-    right: 0;
+    right: 5px;
+    transform: rotate(180deg);
   `}
 `;
 
