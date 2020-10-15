@@ -12,7 +12,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Provider store={store}>
-                <div className="app">
+                <div className="app" css={AppStyles}>
                     <div className="contents" css={ContentsStyle}>
                         <Switch>
                             <Route exact path="/" component={Home} />
@@ -26,6 +26,12 @@ const App = () => {
     );
 };
 
+const AppStyles = css`
+    margin: 0px auto;
+    @media (min-width: 1680px) {
+        max-width: 1680px;
+    }
+`;
 const ContentsStyle = css`
     display: flex;
     flex-direction: column;

@@ -33,6 +33,14 @@ class HorizontalList extends Component {
                 (parseFloat(listItemStyles.width) +
                     parseFloat(listItemStyles.marginRight))
         );
+        this.setState((state) => ({
+            ...state,
+            rightButtonEnabled:
+                this.props.children.length <=
+                this.listStateRef.current.ItemsInView
+                    ? false
+                    : true
+        }));
     };
 
     _onResize = () => {
@@ -66,8 +74,6 @@ class HorizontalList extends Component {
             itemMargin,
             itemWidthInPercentage
         } = this.listStateRef.current;
-        // console.log(itemWidthInPercentage);
-        // console.log(currentIndex);
         const newScroll =
             -(currentIndex * itemWidthInPercentage) -
             currentIndex * (itemMargin / listWidth) * 100;
@@ -164,10 +170,6 @@ class HorizontalList extends Component {
                 const { currentX, currentIndex } = state;
                 const { itemWidthInPercentage } = this.listStateRef.current;
                 const dx = this.getRightDx();
-                console.log(
-                    "currentIndex " +
-                        (currentIndex + Math.floor(dx / itemWidthInPercentage))
-                );
                 return {
                     currentX: currentX - dx,
                     currentIndex:
