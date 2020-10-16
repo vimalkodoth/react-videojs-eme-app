@@ -23,7 +23,7 @@ const PortraitItemStyles = css`
     &.item {
         width: 100%;
         border: 5px solid;
-        border-color: blue;
+        border-color: transparent;
         &:hover {
             border-color: yellow;
         }

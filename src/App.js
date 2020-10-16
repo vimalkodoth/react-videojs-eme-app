@@ -4,8 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { css } from "@emotion/core";
 import store from "./store";
-import { Home, Details, Trailer } from "./components/pages";
-import withErrorBoundary from "./components/hocs/withErrorBoundary";
+import AsyncRouteWithErrorBoundary from "./components/AsyncRouteWithErrorBoundary";
 
 class App extends Component {
     render() {
@@ -18,15 +17,36 @@ class App extends Component {
                                 <Route
                                     exact
                                     path="/"
-                                    component={withErrorBoundary(Home)}
+                                    component={(props) => (
+                                        <AsyncRouteWithErrorBoundary
+                                            props={props}
+                                            loadingPromise={import(
+                                                "./components/pages/Home"
+                                            )}
+                                        />
+                                    )}
                                 />
                                 <Route
                                     path="/details/:id"
-                                    component={withErrorBoundary(Details)}
+                                    component={(props) => (
+                                        <AsyncRouteWithErrorBoundary
+                                            props={props}
+                                            loadingPromise={import(
+                                                "./components/pages/Details"
+                                            )}
+                                        />
+                                    )}
                                 />
                                 <Route
                                     path="/trailer"
-                                    component={withErrorBoundary(Trailer)}
+                                    component={(props) => (
+                                        <AsyncRouteWithErrorBoundary
+                                            props={props}
+                                            loadingPromise={import(
+                                                "./components/pages/Trailer"
+                                            )}
+                                        />
+                                    )}
                                 />
                             </Switch>
                         </div>
