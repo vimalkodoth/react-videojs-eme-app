@@ -1,4 +1,6 @@
 const autoprefixer = require("autoprefixer");
+const path = require("path");
+const webpack = require("webpack");
 const CSSModuleLoader = {
     loader: "css-loader",
     options: {
@@ -26,10 +28,16 @@ const PostCSSLoader = {
             plugins: () => [
                 autoprefixer({
                     browsers: [
-                        ">1%",
-                        "last 4 versions",
-                        "Firefox ESR",
-                        "not ie < 9"
+                        "last 2 chrome versions",
+                        "last 2 chromeAndroid versions",
+                        "last 2 firefox versions",
+                        "last 2 firefoxAndroid versions",
+                        "last 2 Safari versions",
+                        "last 2 iOS versions",
+                        "last 2 Edge versions",
+                        "last 2 Opera versions",
+                        "last 2 OperaMobile versions",
+                        "ie >= 11"
                     ]
                 })
             ]
@@ -38,7 +46,10 @@ const PostCSSLoader = {
 };
 module.exports = () => ({
     devtool: "#eval-source-map",
+    entry: ["react-hot-loader/patch", "./src/index.js"],
     devServer: {
+        hot: true,
+        inline: true,
         historyApiFallback: true,
         proxy: {
             "/v3/**": {
@@ -65,5 +76,6 @@ module.exports = () => ({
                 ]
             }
         ]
-    }
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin()]
 });
