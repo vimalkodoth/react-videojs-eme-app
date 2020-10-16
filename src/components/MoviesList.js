@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMoviesList } from "./../actionCreators";
 import List from "./List";
-import Image from "./Image";
-import { Link } from "react-router-dom";
+import PortraitItem from "./PortraitItem";
 import { css } from "@emotion/core";
 
 class MoviesList extends Component {
@@ -29,13 +28,10 @@ class MoviesList extends Component {
                         <List.Horizontal>
                             {list.contents.data.map((movieItem) => {
                                 return (
-                                    <div className="item" key={movieItem.id}>
-                                        <Link to={`/details/${movieItem.id}`}>
-                                            <Image
-                                                src={movieItem.images.artwork}
-                                            />
-                                        </Link>
-                                    </div>
+                                    <PortraitItem
+                                        key={movieItem.id}
+                                        item={movieItem}
+                                    ></PortraitItem>
                                 );
                             })}
                         </List.Horizontal>

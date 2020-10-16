@@ -257,23 +257,6 @@ const ListItem = css`
     &:not(:last-child) {
         margin: 0 5px 0 0;
     }
-
-    & .item {
-        width: 100%;
-        border: 5px solid;
-        border-color: transparent;
-        &:hover {
-            border-color: yellow;
-        }
-        a {
-            display: flex;
-        }
-    }
-
-    img {
-        min-width: 100%;
-        max-width: 100%;
-    }
 `;
 
 const Button = (props) => css`
