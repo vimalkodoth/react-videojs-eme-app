@@ -39,7 +39,3 @@ class Image extends Component {
 }
 
 export default Image;
-
-// const ImageStyles = (props) => css`
-//     display: ${props.default ? (!props.loaded ? true : false) : true};
-// `;

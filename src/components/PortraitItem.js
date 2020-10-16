@@ -6,7 +6,6 @@ import { css } from "@emotion/core";
 class PortraitItem extends React.Component {
     render() {
         const { item } = this.props;
-        console.log("rendering");
 
         return (
             <div className="item" css={PortraitItemStyles}>
@@ -24,7 +23,7 @@ const PortraitItemStyles = css`
     &.item {
         width: 100%;
         border: 5px solid;
-        border-color: transparent;
+        border-color: blue;
         &:hover {
             border-color: yellow;
         }
@@ -37,7 +36,3 @@ const PortraitItemStyles = css`
         }
     }
 `;
-
-if (module.hot) {
-    module.hot.accept();
-}

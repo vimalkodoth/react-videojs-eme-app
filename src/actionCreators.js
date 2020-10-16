@@ -1,9 +1,17 @@
-import { ADD_MOVIES_LIST, ADD_MOVIES_DETAIL } from "./actions";
+import {
+    ADD_MOVIES_LIST,
+    CLEAR_MOVIES_LIST,
+    ADD_MOVIES_DETAIL
+} from "./actions";
 import config from "./config.json";
 import apiClient from "./utils/apiClient";
 
 export function addMoviesList(list) {
     return { type: ADD_MOVIES_LIST, payload: list };
+}
+
+export function clearMoviesList(list) {
+    return { type: CLEAR_MOVIES_LIST, payload: list };
 }
 
 export function addMoviesDetail(detail) {
@@ -29,15 +37,13 @@ export function fetchMoviesList() {
         list: { ids, endpoints }
     } = config.home;
 
-    console.log(ids, endpoints);
-
     return async (dispatch) => {
         try {
             const promises = ids.map((id) => {
                 const source = endpoints.list.replace("{id}", id);
                 return apiClient.call(source);
             });
-
+            dispatch(clearMoviesList());
             for (let p of promises) {
                 const response = await p;
                 if (response) {
