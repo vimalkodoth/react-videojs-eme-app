@@ -5,6 +5,8 @@ import { css } from "@emotion/core";
 
 require("video.js/dist/video-js.css");
 class VideoPlayer extends React.Component {
+    player = null;
+
     componentDidMount() {
         this.player = videojs(
             this.videoNode,
@@ -52,6 +54,8 @@ const Player = css`
         max-width: 100%;
         &.full {
             position: absolute;
+            left: 0;
+            right: 0;
             min-width: 100%;
             height: 100%;
         }
