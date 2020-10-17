@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
 import spacerImage from "./../static/img/spacer-image.png";
-
+import { string } from "prop-types";
 class Image extends Component {
+    static propTypes = {
+        src: string
+    };
+    static defaultProps = {
+        src: spacerImage
+    };
     state = {
         loaded: false,
         defaultSrc: spacerImage
@@ -16,7 +22,7 @@ class Image extends Component {
     };
 
     render() {
-        const { src = spacerImage } = this.props;
+        const { src } = this.props;
         const { defaultSrc, loaded } = this.state;
         return (
             <React.Fragment>

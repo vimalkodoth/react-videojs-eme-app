@@ -17,7 +17,6 @@ class VideoPlayer extends React.Component {
                 ...this.props
             },
             function onPlayerReady() {
-                console.log("onPlayerReady", this);
                 this.play();
             }
         );

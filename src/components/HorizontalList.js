@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
-
 import Button from "./Button";
+import PropTypes, { node } from "prop-types";
 
 class HorizontalList extends Component {
+    static propTypes = {
+        children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])
+            .isRequired
+    };
+    static defaultProps = {
+        children: React.createElement("div")
+    };
     state = {
         currentX: 0,
         currentIndex: 0,

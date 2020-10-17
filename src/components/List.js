@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import HorizontalList from "./HorizontalList";
 import { css } from "@emotion/core";
+import PropTypes, { node } from "prop-types";
 
 class List extends Component {
+    static propTypes = {
+        children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])
+            .isRequired
+    };
+    static defaultProps = {
+        children: React.createElement()
+    };
+
     static Title = (props) => {
         return props.children ? props.children : null;
     };

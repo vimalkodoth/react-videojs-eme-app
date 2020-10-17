@@ -3,8 +3,16 @@ import { connect } from "react-redux";
 import { css } from "@emotion/core";
 import RoundedButton from "./RoundedButton";
 import { withRouter } from "react-router-dom";
-
+import { object } from "prop-types";
 class DetailsHeader extends Component {
+    static propTypes = {
+        movieDetail: object,
+        location: object
+    };
+    static propTypes = {
+        movieDetail: {},
+        location: {}
+    };
     render() {
         if (!this.props.movieDetail) return null;
         const { snapshot = "" } = this.props.movieDetail.images;

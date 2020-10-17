@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
+import { object } from "prop-types";
 const withBackButton = (WrappedComponent) => {
-    return class extends Component {
+    const Sub = class extends Component {
         onBackButtonClicked = () => {
             const { location, history } = this.props;
             if (location.state && location.state.from) {
@@ -19,6 +19,16 @@ const withBackButton = (WrappedComponent) => {
             );
         }
     };
+    Sub.propTypes = {
+        location: object,
+        history: object
+    };
+
+    Sub.defaultProps = {
+        location: {},
+        history: {}
+    };
+    return Sub;
 };
 
 export default withBackButton;

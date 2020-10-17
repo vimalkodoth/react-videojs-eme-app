@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
+import { string, object } from "prop-types";
 
 class RoundedButton extends Component {
+    static propTypes = {
+        title: string,
+        to: string || object
+    };
+    static defaultProps = {
+        title: "",
+        to: ""
+    };
     render() {
         const { title, to } = this.props;
         return (

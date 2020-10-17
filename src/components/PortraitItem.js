@@ -2,8 +2,17 @@ import React from "react";
 import Image from "./Image";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
+import { string, object } from "prop-types";
 
 class PortraitItem extends React.Component {
+    static propTypes = {
+        item: object,
+        to: string || object
+    };
+    static defaultProps = {
+        item: {},
+        to: ""
+    };
     render() {
         const { item, to } = this.props;
 

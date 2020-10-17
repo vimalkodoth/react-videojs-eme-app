@@ -3,16 +3,15 @@
       "eslint:recommended", //turns on recommended eslint rules
       "plugin:react/recommended",
       "plugin:import/errors", // catch errors related to module imports
-      "plugin:jsx-a11y/recommended",
       "prettier", // turns off all prettier configs provided by eslint
       "prettier/react"
     ],
     "parser": "babel-eslint",
     "rules": {
       "no-console": 1, //warn. 0 to turn off,
-      "react/proptypes": 0
+      "react/display-name": 0
     },
-    "plugins": ["react", "import", "js/a11y"],
+    "plugins": ["react", "import"],
     "parserOptions": {
       "ecmaVersion": 2018,
       "sourceType": "module", // es6 style imports

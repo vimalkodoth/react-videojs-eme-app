@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-
+import { object, promise } from "prop-types";
 class AsyncRoute extends Component {
+    static propTypes = {
+        loadingPromise: promise,
+        props: object
+    };
     state = {
         loaded: false
     };

@@ -1,6 +1,14 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 class ErrorBoundary extends Component {
+    static propTypes = {
+        children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])
+            .isRequired
+    };
+    static defaultProps = {
+        children: React.createElement("div")
+    };
+
     state = {
         error: "",
         errorInfo: "",
