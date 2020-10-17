@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
-import arrow from "./../static/img/arrow.svg";
+import Button from "./Button";
 
 class HorizontalList extends Component {
     state = {
@@ -90,7 +90,6 @@ class HorizontalList extends Component {
         } = this.listStateRef.current;
         const { currentX } = this.state;
         let dx = 0;
-        debugger;
         let maxOffScreenItems = Math.floor(
             Math.abs((currentX / 100) * listWidth) / (itemWidth + itemMargin)
         );
@@ -206,22 +205,15 @@ class HorizontalList extends Component {
                         </li>
                     ))}
                 </ul>
-                <div
-                    css={Button({ prev: true })}
-                    style={{
-                        display: this.state.leftButtonEnabled ? "block" : "none"
-                    }}
+                <Button
                     onClick={this.moveLeft}
-                ></div>
-                <div
-                    css={Button()}
-                    style={{
-                        display: this.state.rightButtonEnabled
-                            ? "block"
-                            : "none"
-                    }}
+                    show={this.state.leftButtonEnabled}
+                    prev={true}
+                />
+                <Button
                     onClick={this.moveRight}
-                ></div>
+                    show={this.state.rightButtonEnabled}
+                />
             </div>
         );
     }
@@ -257,29 +249,6 @@ const ListItem = css`
     &:not(:last-child) {
         margin: 0 5px 0 0;
     }
-`;
-
-const Button = (props) => css`
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    margin-top: -24px;
-    width: 48px;
-    height: 48px;
-    background-image: url(${arrow});
-    background-color: rgba(255, 255, 0, 0.75);
-    background-size: 110%;
-    background-repeat: no-repeat;
-    background-position: -3px -2px;
-    border-radius: 50%;
-    ${props && props.prev
-        ? `
-    left: 5px;
-  `
-        : `
-    right: 5px;
-    transform: rotate(180deg);
-  `}
 `;
 
 export default HorizontalList;

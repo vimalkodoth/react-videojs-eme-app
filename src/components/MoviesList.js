@@ -7,7 +7,6 @@ import { css } from "@emotion/core";
 
 class MoviesList extends Component {
     componentDidMount() {
-        debugger;
         this.props.fetchMoviesList();
     }
 

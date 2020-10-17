@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import withErrorBoundary from "./withErrorBoundary";
 
 class AsyncRoute extends Component {
     state = {
@@ -9,6 +8,7 @@ class AsyncRoute extends Component {
     componentDidMount() {
         this.props.loadingPromise.then((module) => {
             this.component = module.default;
+            debugger;
             this.setState({ loaded: true });
         });
     }
