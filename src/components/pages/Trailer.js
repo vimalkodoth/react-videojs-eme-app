@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import VideoPlayer from "./../VideoPlayer";
 import Button from "./../Button";
+import withBackButton from "./../hocs/withBackButton";
 
 const videoJsOptions = {
     src:
@@ -15,13 +16,7 @@ const videoJsOptions = {
 
 class Trailer extends Component {
     goBack = (e) => {
-        const { location, history } = this.props;
-        if (location.state && location.state.from) {
-            history.goBack();
-        } else {
-            history.push("/");
-        }
-        e.preventDefault();
+        this.props.onBackButtonClicked(e);
     };
     render() {
         return (
@@ -33,4 +28,4 @@ class Trailer extends Component {
     }
 }
 
-export default Trailer;
+export default withBackButton(Trailer);

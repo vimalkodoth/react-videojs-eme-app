@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchMovieDetail } from "./../../actionCreators";
 import DetailsHeader from "./../DetailsHeader";
 import Button from "./../../components/Button";
+import withBackButton from "./../hocs/withBackButton";
 
 class Details extends Component {
     componentDidMount() {
@@ -12,13 +13,8 @@ class Details extends Component {
         this.props.fetchMovieDetail(params.id);
     }
 
-    goBack = () => {
-        const { location, history } = this.props;
-        if (location.state && location.state.from) {
-            history.goBack();
-        } else {
-            history.push("/");
-        }
+    goBack = (e) => {
+        this.props.onBackButtonClicked(e);
     };
 
     render() {
@@ -39,4 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Details);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withBackButton(Details));
