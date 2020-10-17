@@ -5,11 +5,11 @@ import List from "./List";
 import PortraitItem from "./PortraitItem";
 import { css } from "@emotion/core";
 import { withRouter } from "react-router";
-import { array, object, promise } from "prop-types";
+import { array, object, func } from "prop-types";
 class MoviesList extends Component {
     static propTypes = {
         moviesList: array,
-        fetchMoviesList: promise,
+        fetchMoviesList: func,
         location: object
     };
     static defaultProps = {

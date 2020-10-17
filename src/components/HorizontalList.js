@@ -221,6 +221,7 @@ class HorizontalList extends Component {
                 <Button
                     onClick={this.moveRight}
                     show={this.state.rightButtonEnabled}
+                    prev={false}
                 />
             </div>
         );

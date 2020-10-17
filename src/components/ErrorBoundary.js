@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import PropTypes, { node } from "prop-types";
 class ErrorBoundary extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])

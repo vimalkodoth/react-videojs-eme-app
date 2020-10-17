@@ -9,7 +9,7 @@ class List extends Component {
             .isRequired
     };
     static defaultProps = {
-        children: React.createElement()
+        children: React.createElement("div")
     };
 
     static Title = (props) => {
