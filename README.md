@@ -1,4 +1,4 @@
-# [Rakuten Tesy]
+# [Rakuten Test]
 
 Code Quality - Prettier
 ESLint - Recommended, Prettier/React
