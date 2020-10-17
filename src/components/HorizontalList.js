@@ -69,7 +69,7 @@ class HorizontalList extends Component {
         });
     };
 
-    repositionList() {
+    repositionList = () => {
         const { currentIndex } = this.state;
         const {
             listWidth,
@@ -80,7 +80,7 @@ class HorizontalList extends Component {
             -(currentIndex * itemWidthInPercentage) -
             currentIndex * (itemMargin / listWidth) * 100;
         this.setState((state) => ({ ...state, currentX: newScroll }));
-    }
+    };
 
     getLeftDx = () => {
         const {
