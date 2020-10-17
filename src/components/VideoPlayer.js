@@ -4,6 +4,10 @@ import * as eme from "videojs-contrib-eme";
 import { css } from "@emotion/core";
 
 require("video.js/dist/video-js.css");
+
+/**
+ * VideoPlayer Component
+ */
 class VideoPlayer extends React.Component {
     player = null;
 

@@ -4,6 +4,10 @@ import { css } from "@emotion/core";
 import RoundedButton from "./RoundedButton";
 import { withRouter } from "react-router-dom";
 import { object } from "prop-types";
+
+/**
+ * Details Header Component
+ */
 class DetailsHeader extends Component {
     static propTypes = {
         movieDetail: object,

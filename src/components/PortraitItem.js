@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
 import PropTypes, { string, object } from "prop-types";
 
+/**
+ * Portrait Item Component
+ */
 class PortraitItem extends React.Component {
     static propTypes = {
         item: object,

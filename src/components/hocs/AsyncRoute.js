@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { object } from "prop-types";
+
+/** AsyncRoute HOC */
 class AsyncRoute extends Component {
     static propTypes = {
         loadingPromise: object,

@@ -4,8 +4,21 @@ import { fetchMovieDetail } from "./../../actionCreators";
 import DetailsHeader from "./../DetailsHeader";
 import Button from "./../../components/Button";
 import withBackButton from "./../hocs/withBackButton";
-
+import { func, object } from "prop-types";
+/**
+ *  Details Page Component
+ */
 class Details extends Component {
+    static propTypes = {
+        onBackButtonClicked: func,
+        fetchMovieDetail: func,
+        match: object
+    };
+    static defaultParams = {
+        onBackButtonClicked: (n) => n,
+        fetchMovieDetail: (n) => n,
+        match: {}
+    };
     componentDidMount() {
         const {
             match: { params }

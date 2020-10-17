@@ -6,6 +6,8 @@ import PortraitItem from "./PortraitItem";
 import { css } from "@emotion/core";
 import { withRouter } from "react-router";
 import { array, object, func } from "prop-types";
+
+/** MoviesList Component */
 class MoviesList extends Component {
     static propTypes = {
         moviesList: array,

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import VideoPlayer from "./../VideoPlayer";
 import Button from "./../Button";
 import withBackButton from "./../hocs/withBackButton";
+import { func } from "prop-types";
 
 const videoJsOptions = {
     src:
@@ -14,7 +15,14 @@ const videoJsOptions = {
     }
 };
 
+/** Trailer Page Component */
 class Trailer extends Component {
+    static propTypes = {
+        onBackButtonClicked: func
+    };
+    static defaultProps = {
+        onBackButtonClicked: (n) => n
+    };
     goBack = (e) => {
         this.props.onBackButtonClicked(e);
     };

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
 import { string, object } from "prop-types";
 
+/**
+ * Rounded Button Component
+ */
 class RoundedButton extends Component {
     static propTypes = {
         title: string,
