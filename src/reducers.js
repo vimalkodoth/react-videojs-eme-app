@@ -10,9 +10,6 @@ const moviesList = (state = [], action) => {
     if (action.type === ADD_MOVIES_LIST) {
         return [...state, action.payload];
     }
-    if (action.type === CLEAR_MOVIES_LIST) {
-        return [];
-    }
     return state;
 };
 

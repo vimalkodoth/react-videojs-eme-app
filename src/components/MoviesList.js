@@ -8,6 +8,7 @@ import { withRouter } from "react-router";
 
 class MoviesList extends Component {
     componentDidMount() {
+        if (this.props.moviesList.length) return;
         this.props.fetchMoviesList();
     }
 

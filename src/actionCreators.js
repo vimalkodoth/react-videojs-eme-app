@@ -1,17 +1,9 @@
-import {
-    ADD_MOVIES_LIST,
-    CLEAR_MOVIES_LIST,
-    ADD_MOVIES_DETAIL
-} from "./actions";
+import { ADD_MOVIES_LIST, ADD_MOVIES_DETAIL } from "./actions";
 import config from "./config.json";
 import apiClient from "./utils/apiClient";
 
 export function addMoviesList(list) {
     return { type: ADD_MOVIES_LIST, payload: list };
-}
-
-export function clearMoviesList(list) {
-    return { type: CLEAR_MOVIES_LIST, payload: list };
 }
 
 export function addMoviesDetail(detail) {
@@ -42,10 +34,6 @@ export function fetchMoviesList() {
                 const source = endpoints.list.replace("{id}", id);
                 return apiClient.call(source);
             });
-            //Needs to improve as HMR causes state update
-            if (module.hot) {
-                dispatch(clearMoviesList());
-            }
             for (let p of promises) {
                 const response = await p;
                 if (response) {
