@@ -1,13 +1,10 @@
-# [React-Webpack4 Starter Boilerplate]
-
-React-Webpack4 starter boilerplate is to scaffold a javascript based react project with frontend infrastructure configured.
+# [Rakuten Tesy]
 
 Code Quality - Prettier
 ESLint - Recommended, Prettier/React
 Webpack - Bundler
 Babel - Transpiler
 Tests - Jest
-Docs - jsdoc/better-docs
 
 ## Quick start
 
@@ -23,16 +20,12 @@ Docs - jsdoc/better-docs
 
 ## Browser support
 
-- Chrome _(latest 2)_
-- Edge _(latest 2)_
-- Firefox _(latest 2)_
-- Internet Explorer 11
-- Opera _(latest 2)_
-- Safari _(latest 2)_
-
-_This doesn't mean that React-Webpack4 boilerplate cannot be used in older browsers,
-just that we'll ensure compatibility with the ones mentioned above._
-
-## License
-
-The code is available under the [MIT license](LICENSE.txt).
+-   "last 2 chrome versions",
+-   "last 2 chromeAndroid versions",
+-   "last 2 firefox versions",
+-   "last 2 firefoxAndroid versions",
+-   "last 2 Safari versions",
+-   "last 2 Edge versions",
+-   "last 2 Opera versions",
+-   "last 2 OperaMobile versions",
+-   "ie >= 11"
