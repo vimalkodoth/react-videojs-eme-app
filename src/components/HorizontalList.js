@@ -94,7 +94,6 @@ class HorizontalList extends Component {
             itemWidth,
             itemMargin,
             ItemsInView,
-            innerListWidth,
             listWidth
         } = this.listStateRef.current;
         const { currentX } = this.state;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
 import arrow from "./../static/img/arrow.svg";
-import { boolean, func } from "prop-types";
+import { bool, func } from "prop-types";
 class Button extends Component {
     static propTypes = {
         onClick: func,
-        show: boolean,
-        prev: boolean
+        show: bool,
+        prev: bool
     };
     static defaultProps = {
         onClick: (val) => val,
