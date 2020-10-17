@@ -5,11 +5,11 @@ import { css } from "@emotion/core";
 
 class PortraitItem extends React.Component {
     render() {
-        const { item } = this.props;
+        const { item, to } = this.props;
 
         return (
             <div className="item" css={PortraitItemStyles}>
-                <Link to={`/details/${item.id}`}>
+                <Link to={to}>
                     <Image src={item.images.artwork} />
                 </Link>
             </div>

@@ -7,7 +7,7 @@ class Button extends Component {
         const { onClick, show, prev } = this.props;
         return (
             <div
-                css={ButtonStyles(prev)}
+                css={ButtonStyles({ prev })}
                 style={{
                     display: show ? "block" : "none"
                 }}
@@ -32,6 +32,7 @@ const ButtonStyles = (props) => css`
     background-repeat: no-repeat;
     background-position: -3px -2px;
     border-radius: 50%;
+    z-index: 9999;
     ${props && props.prev
         ? `
     left: 5px;

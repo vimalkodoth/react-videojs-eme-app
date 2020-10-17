@@ -8,7 +8,6 @@ class AsyncRoute extends Component {
     componentDidMount() {
         this.props.loadingPromise.then((module) => {
             this.component = module.default;
-            debugger;
             this.setState({ loaded: true });
         });
     }

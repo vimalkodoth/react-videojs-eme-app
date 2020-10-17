@@ -4,18 +4,15 @@ import { fetchMoviesList } from "./../actionCreators";
 import List from "./List";
 import PortraitItem from "./PortraitItem";
 import { css } from "@emotion/core";
+import { withRouter } from "react-router";
 
 class MoviesList extends Component {
     componentDidMount() {
         this.props.fetchMoviesList();
     }
 
-    componentDidUpdate() {
-        console.log("list movies");
-        console.log(this.props.moviesList);
-    }
-
     render() {
+        const { location } = this.props;
         if (!this.props.moviesList) return;
         return this.props.moviesList.map((list) => {
             return (
@@ -31,6 +28,10 @@ class MoviesList extends Component {
                                     <PortraitItem
                                         key={movieItem.id}
                                         item={movieItem}
+                                        to={{
+                                            pathname: `/details/${movieItem.id}`,
+                                            state: { from: location.pathname }
+                                        }}
                                     ></PortraitItem>
                                 );
                             })}
@@ -49,7 +50,10 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(MoviesList));
 
 const MoviesListStyles = css`
     & h2 {

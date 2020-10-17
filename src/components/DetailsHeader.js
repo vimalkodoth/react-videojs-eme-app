@@ -2,17 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { css } from "@emotion/core";
 import RoundedButton from "./RoundedButton";
+import { withRouter } from "react-router-dom";
 
 class DetailsHeader extends Component {
     render() {
         if (!this.props.movieDetail) return null;
         const { snapshot = "" } = this.props.movieDetail.images;
-
+        const { location } = this.props;
         return (
             <div css={Header(snapshot)}>
                 <RoundedButton
                     title={"TRAILER"}
-                    to={"/trailer"}
+                    to={{
+                        pathname: "/trailer",
+                        state: { from: location.pathname }
+                    }}
                 ></RoundedButton>
                 <div className="meta-info">
                     <div className="title">{this.props.movieDetail.title}</div>
@@ -25,7 +29,8 @@ class DetailsHeader extends Component {
 const mapStateToProps = (state, ownProps) => ({
     movieDetail: state.movieDetails[ownProps.id]
 });
-export default connect(mapStateToProps)(DetailsHeader);
+
+export default connect(mapStateToProps)(withRouter(DetailsHeader));
 
 const Header = (image) => css`
     position: relative;

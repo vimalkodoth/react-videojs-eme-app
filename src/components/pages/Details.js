@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMovieDetail } from "./../../actionCreators";
 import DetailsHeader from "./../DetailsHeader";
+import Button from "./../../components/Button";
 
 class Details extends Component {
     componentDidMount() {
@@ -11,8 +12,23 @@ class Details extends Component {
         this.props.fetchMovieDetail(params.id);
     }
 
+    goBack = () => {
+        const { location, history } = this.props;
+        if (location.state && location.state.from) {
+            history.goBack();
+        } else {
+            history.push("/");
+        }
+    };
+
     render() {
-        return <DetailsHeader id={this.props.match.params.id} />;
+        const { match } = this.props;
+        return (
+            <React.Fragment>
+                <Button onClick={this.goBack} show={true} prev={true} />
+                <DetailsHeader id={match.params.id} />
+            </React.Fragment>
+        );
     }
 }
 

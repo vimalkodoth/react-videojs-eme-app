@@ -24,7 +24,6 @@ export function fetchMovieDetail(id) {
             let { movie: source = "" } = config.home.list.endpoints || {};
             source = source.replace("{id}", id);
             const response = await apiClient.call(source);
-            debugger;
             dispatch(addMoviesDetail(response.data));
         } catch (e) {
             console.log(e);
@@ -43,7 +42,10 @@ export function fetchMoviesList() {
                 const source = endpoints.list.replace("{id}", id);
                 return apiClient.call(source);
             });
-            dispatch(clearMoviesList());
+            //Needs to improve as HMR causes state update
+            if (module.hot) {
+                dispatch(clearMoviesList());
+            }
             for (let p of promises) {
                 const response = await p;
                 if (response) {
