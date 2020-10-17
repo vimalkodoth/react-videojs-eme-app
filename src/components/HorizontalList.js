@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { css } from "@emotion/core";
+
 import Button from "./Button";
 
 class HorizontalList extends Component {
@@ -11,6 +12,20 @@ class HorizontalList extends Component {
     };
     listRef = React.createRef();
     listStateRef = React.createRef();
+
+    componentDidMount() {
+        this.listStateRef.current = {};
+        setTimeout(() => {
+            if (this.listRef.current) {
+                this.updateDimensions();
+            }
+        }, 0);
+        window.addEventListener("resize", this.onResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.onResize);
+    }
 
     updateDimensions = () => {
         const innerList = this.listRef.current.querySelector("ul");
@@ -43,7 +58,7 @@ class HorizontalList extends Component {
         }));
     };
 
-    _onResize = () => {
+    onResize = () => {
         console.log(
             window.getComputedStyle(document.querySelector('li[data-item="1"'))
                 .width
@@ -53,19 +68,6 @@ class HorizontalList extends Component {
             this.repositionList();
         });
     };
-    componentDidMount() {
-        this.listStateRef.current = {};
-        setTimeout(() => {
-            if (this.listRef.current) {
-                this.updateDimensions();
-            }
-        }, 0);
-        window.addEventListener("resize", this._onResize);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this._onResize);
-    }
 
     repositionList() {
         const { currentIndex } = this.state;

@@ -29,6 +29,7 @@ class VideoPlayer extends React.Component {
     componentWillUnmount() {
         if (this.player) {
             this.player.dispose();
+            this.player = null;
         }
     }
 
