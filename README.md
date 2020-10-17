@@ -1,10 +1,14 @@
 # [Rakuten Test]
 
-Code Quality - Prettier
-ESLint - Recommended, Prettier/React
-Webpack - Bundler
-Babel - Transpiler
-Tests - Jest
+-   Code Quality - Prettier
+-   ESLint - Recommended, Prettier/React
+-   Webpack - Bundler ( + Compression, BundleAnalyzer)
+-   Babel - Transpiler
+-   Tests - Jest
+-   React
+-   React HotLoader/HMR
+-   Redux
+-   Jest
 
 ## Quick start
 
