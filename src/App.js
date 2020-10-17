@@ -1,11 +1,10 @@
 import { hot } from "react-hot-loader/root";
-import react, { Component } from "react";
+import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { css } from "@emotion/core";
 import store from "./store";
 import AsyncRouteWithErrorBoundary from "./components/AsyncRouteWithErrorBoundary";
-import AsyncRoute from "./components/hocs/AsyncRoute";
 class App extends Component {
     render() {
         return (
