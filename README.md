@@ -8,9 +8,15 @@
 -   React
 -   React HotLoader/HMR
 -   Redux
+-   Emotion (CSS-IN-JS)
 -   Jest
 
 ## Quick start
+
+npm run dev
+visit https://localhost:8080/ to access the application
+
+Note: Application runs on https
 
 ```
 "prod": #webpack production,
