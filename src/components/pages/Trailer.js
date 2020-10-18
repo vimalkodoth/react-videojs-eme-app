@@ -4,6 +4,7 @@ import Button from "./../Button";
 import withBackButton from "./../hocs/withBackButton";
 import { func } from "prop-types";
 
+//Config needs to be moved from component
 const videoJsOptions = {
     src:
         "https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd",

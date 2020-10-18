@@ -16,5 +16,5 @@
       }
     ]
   ], //a preset is bunch of plugins for transformation
-  "plugins": ["@babel/plugin-proposal-class-properties","react-hot-loader/babel"]
+  "plugins": ["@babel/plugin-proposal-class-properties","react-hot-loader/babel","@babel/plugin-transform-strict-mode"]
 }

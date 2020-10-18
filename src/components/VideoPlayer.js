@@ -1,9 +1,6 @@
 import React from "react";
-import videojs from "video.js";
-import * as eme from "videojs-contrib-eme";
 import { css } from "@emotion/core";
-
-require("video.js/dist/video-js.css");
+import player from "./../utils/player";
 
 /**
  * VideoPlayer Component
@@ -12,7 +9,7 @@ class VideoPlayer extends React.Component {
     player = null;
 
     componentDidMount() {
-        this.player = videojs(
+        this.player = player.init(
             this.videoNode,
             {
                 html5: {
@@ -20,18 +17,15 @@ class VideoPlayer extends React.Component {
                 },
                 ...this.props
             },
-            function onPlayerReady() {
-                this.play();
+            () => {
+                this.player.play();
             }
         );
-        this.player.eme();
-        this.player.src(this.props);
-        this.player.play();
     }
 
     componentWillUnmount() {
         if (this.player) {
-            this.player.dispose();
+            this.player.destroy();
             this.player = null;
         }
     }
