@@ -12,18 +12,22 @@ class Details extends Component {
     static propTypes = {
         onBackButtonClicked: func,
         fetchMovieDetail: func,
+        movieDetails: object,
         match: object
     };
     static defaultParams = {
         onBackButtonClicked: (n) => n,
         fetchMovieDetail: (n) => n,
-        match: {}
+        match: {},
+        movieDetails: {}
     };
     componentDidMount() {
         const {
             match: { params }
         } = this.props;
-        this.props.fetchMovieDetail(params.id);
+        if (!this.props.movieDetails) {
+            this.props.fetchMovieDetail(params.id);
+        }
     }
 
     goBack = (e) => {
