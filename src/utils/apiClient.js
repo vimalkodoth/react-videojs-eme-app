@@ -15,7 +15,6 @@ const apiClient = {
             Object.keys(params).forEach((key) =>
                 url.searchParams.append(key, params[key])
             );
-            console.log(url);
         }
         return window
             .fetch(url)

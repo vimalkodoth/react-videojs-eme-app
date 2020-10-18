@@ -18,7 +18,7 @@ export function fetchMovieDetail(id) {
             const response = await apiClient.call(source);
             dispatch(addMoviesDetail(response.data));
         } catch (e) {
-            //console.log(e);
+            console.log(e);
         }
     };
 }
@@ -41,7 +41,7 @@ export function fetchMoviesList() {
                 }
             }
         } catch (e) {
-            //console.log(e);
+            console.log(e);
         }
     };
 }

@@ -67,10 +67,6 @@ class HorizontalList extends Component {
     };
 
     onResize = () => {
-        console.log(
-            window.getComputedStyle(document.querySelector('li[data-item="1"'))
-                .width
-        );
         requestAnimationFrame(() => {
             this.updateDimensions();
             this.repositionList();
@@ -119,10 +115,6 @@ class HorizontalList extends Component {
                     return;
                 }
                 const dx = this.getLeftDx();
-                console.log(
-                    "currentIndex " +
-                        (currentIndex - Math.floor(dx / itemWidthInPercentage))
-                );
                 return {
                     ...state,
                     currentX: currentX + dx >= 0 ? 0 : currentX + dx,
