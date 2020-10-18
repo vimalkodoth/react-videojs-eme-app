@@ -1,4 +1,4 @@
-# [Rakuten Test]
+# [ReactJS VideoJS EME App]
 
 -   Code Quality - Prettier
 -   ESLint - Recommended, Prettier/React
