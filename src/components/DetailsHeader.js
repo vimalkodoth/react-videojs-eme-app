@@ -71,16 +71,16 @@ const Header = (image) => css`
         justify-content: center;
         background-color: rgba(20, 20, 20, 0.5);
         & .title {
-            font-size: 16px;
+            font-size: 1em;
             color: #fff;
             @media (min-width: 300px) {
-                font-size: 22px;
+                font-size: 1.5em;
             }
             @media (min-width: 360px) {
-                font-size: 36px;
+                font-size: 2em;
             }
             @media (min-width: 680px) {
-                font-size: 40px;
+                font-size: 2.5em;
             }
         }
     }

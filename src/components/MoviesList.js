@@ -69,6 +69,10 @@ export default connect(
 
 const MoviesListStyles = css`
     & h2 {
+        font-size: 1em;
+        @media (min-width: 880px) {
+            font-size: 1.5em;
+        }
         margin-left: 5px;
     }
 `;
