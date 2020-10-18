@@ -3,18 +3,22 @@ import { connect } from "react-redux";
 import { css } from "@emotion/core";
 import RoundedButton from "./RoundedButton";
 import { withRouter } from "react-router-dom";
-import { object } from "prop-types";
+import { string, object } from "prop-types";
 
 /**
  * Details Header Component
  */
 class DetailsHeader extends Component {
     static propTypes = {
+        id: string,
         movieDetail: object,
         location: object
     };
-    static propTypes = {
-        movieDetail: {},
+    static defaultProps = {
+        id: string,
+        movieDetail: {
+            images: []
+        },
         location: {}
     };
     render() {

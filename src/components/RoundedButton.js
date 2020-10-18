@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
-import { string, object } from "prop-types";
+import PropTypes, { string, object } from "prop-types";
 
 /**
  * Rounded Button Component
@@ -9,7 +9,7 @@ import { string, object } from "prop-types";
 class RoundedButton extends Component {
     static propTypes = {
         title: string,
-        to: string || object
+        to: PropTypes.oneOfType([string, object]).isRequired
     };
     static defaultProps = {
         title: "",
