@@ -195,7 +195,7 @@ class HorizontalList extends Component {
 
     render() {
         return (
-            <div ref={this.listRef} css={List}>
+            <div ref={this.listRef} css={List} data-testid="h-list">
                 <ul
                     css={ListInner}
                     style={{ transform: `translateX(${this.state.currentX}%)` }}
