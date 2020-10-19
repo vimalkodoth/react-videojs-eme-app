@@ -21,6 +21,7 @@ class Button extends Component {
         const { onClick, show, prev } = this.props;
         return (
             <div
+                data-testid="button"
                 css={ButtonStyles({ prev })}
                 style={{
                     display: show ? "block" : "none"

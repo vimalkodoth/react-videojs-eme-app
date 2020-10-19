@@ -34,7 +34,7 @@ class DetailsHeader extends Component {
                         state: { from: location.pathname }
                     }}
                 ></RoundedButton>
-                <div className="meta-info">
+                <div className="meta-info" data-testid="header-meta">
                     <div className="title">{this.props.movieDetail.title}</div>
                 </div>
             </div>

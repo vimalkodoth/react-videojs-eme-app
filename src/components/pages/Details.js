@@ -25,9 +25,7 @@ class Details extends Component {
         const {
             match: { params }
         } = this.props;
-        if (!this.props.movieDetails) {
-            this.props.fetchMovieDetail(params.id);
-        }
+        this.props.fetchMovieDetail(params.id);
     }
 
     goBack = (e) => {
@@ -37,10 +35,10 @@ class Details extends Component {
     render() {
         const { match } = this.props;
         return (
-            <React.Fragment>
+            <div>
                 <Button onClick={this.goBack} show={true} prev={true} />
                 <DetailsHeader id={match.params.id} />
-            </React.Fragment>
+            </div>
         );
     }
 }

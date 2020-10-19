@@ -17,6 +17,7 @@ describe("MoviesList", () => {
         console.error = originalConsoleError;
         store = mockStore({});
     });
+
     it("renders correctly", () => {
         const childCount = 3;
         store = mockStore({
@@ -35,6 +36,7 @@ describe("MoviesList", () => {
             component.find('[data-testid="h-list"]').children().length
         ).toEqual(childCount);
     });
+
     it("calls dispatch on mount", () => {
         store.dispatch = jest.fn();
         const component = mount(
