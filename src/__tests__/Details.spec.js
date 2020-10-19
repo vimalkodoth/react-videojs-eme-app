@@ -1,9 +1,10 @@
 import React from "react";
-import { render } from "enzyme";
+import { render, shallow } from "enzyme";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import Details from "../components/pages/Details";
+import UnWrappedDetails from "../components/pages/Details";
 import detailsItem from "./json/details-item.json";
 let store;
 const mockStore = configureStore([]);
@@ -24,6 +25,25 @@ describe("Details", () => {
     });
 
     it("renders correctly", () => {
+        store.dispatch = jest.fn();
+        const component = shallow(
+            <Provider store={store}>
+                <MemoryRouter>
+                    <UnWrappedDetails
+                        match={{
+                            params: { id: "el-avion-del-dinero" },
+                            isExact: true,
+                            path: "",
+                            url: ""
+                        }}
+                    />
+                </MemoryRouter>
+            </Provider>
+        );
+        expect(component).toMatchSnapshot();
+    });
+
+    it("renders correctly with expected data", () => {
         store.dispatch = jest.fn();
         const component = render(
             <Provider store={store}>

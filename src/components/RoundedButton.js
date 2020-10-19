@@ -18,7 +18,11 @@ class RoundedButton extends Component {
     render() {
         const { title, to } = this.props;
         return (
-            <div className="rounded" css={RoundedButtonStyles}>
+            <div
+                data-testid="rounded-button"
+                className="rounded"
+                css={RoundedButtonStyles}
+            >
                 <span className="action">
                     <Link to={to}>
                         <span className="element">

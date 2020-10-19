@@ -50,6 +50,8 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
+export const UnWrappedDetails = Details;
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

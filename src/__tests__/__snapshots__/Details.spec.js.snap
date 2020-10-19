@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Details renders correctly 1`] = `
+exports[`Details renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Details renders correctly with expected data 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
@@ -24,6 +26,7 @@ initialize {
             Object {
               "attribs": Object {
                 "class": "rounded css-1in5v9c-RoundedButtonStyles",
+                "data-testid": "rounded-button",
               },
               "children": Array [
                 Object {
@@ -263,9 +266,11 @@ initialize {
               "type": "tag",
               "x-attribsNamespace": Object {
                 "class": undefined,
+                "data-testid": undefined,
               },
               "x-attribsPrefix": Object {
                 "class": undefined,
+                "data-testid": undefined,
               },
             },
             Object {
@@ -308,6 +313,7 @@ initialize {
               "prev": Object {
                 "attribs": Object {
                   "class": "rounded css-1in5v9c-RoundedButtonStyles",
+                  "data-testid": "rounded-button",
                 },
                 "children": Array [
                   Object {
@@ -500,9 +506,11 @@ initialize {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "class": undefined,
+                  "data-testid": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "class": undefined,
+                  "data-testid": undefined,
                 },
               },
               "type": "tag",
@@ -551,6 +559,7 @@ initialize {
           Object {
             "attribs": Object {
               "class": "rounded css-1in5v9c-RoundedButtonStyles",
+              "data-testid": "rounded-button",
             },
             "children": Array [
               Object {
@@ -790,9 +799,11 @@ initialize {
             "type": "tag",
             "x-attribsNamespace": Object {
               "class": undefined,
+              "data-testid": undefined,
             },
             "x-attribsPrefix": Object {
               "class": undefined,
+              "data-testid": undefined,
             },
           },
           Object {
@@ -835,6 +846,7 @@ initialize {
             "prev": Object {
               "attribs": Object {
                 "class": "rounded css-1in5v9c-RoundedButtonStyles",
+                "data-testid": "rounded-button",
               },
               "children": Array [
                 Object {
@@ -1027,9 +1039,11 @@ initialize {
               "type": "tag",
               "x-attribsNamespace": Object {
                 "class": undefined,
+                "data-testid": undefined,
               },
               "x-attribsPrefix": Object {
                 "class": undefined,
+                "data-testid": undefined,
               },
             },
             "type": "tag",

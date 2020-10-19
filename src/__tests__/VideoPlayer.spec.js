@@ -14,14 +14,16 @@ const videoJsOptions = {
 };
 
 describe("VideoPlayer", () => {
-    xit("renders correctly", () => {
+    it("renders correctly", () => {
         const component = render(<VideoPlayer {...videoJsOptions} />);
         expect(component).toMatchSnapshot();
     });
+
     it("renders a video element", () => {
         const component = render(<VideoPlayer {...videoJsOptions} />);
         expect(component.find("video").length).toEqual(1);
     });
+
     it("renders video element in fullscreen", () => {
         const component = render(<VideoPlayer {...videoJsOptions} />);
         expect(component.find(".video-js.full").length).toEqual(1);
