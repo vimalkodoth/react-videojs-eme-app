@@ -60,6 +60,7 @@ describe("Details", () => {
             </Provider>
         );
         expect(component.find('[data-testid="button"]')).toBeTruthy();
+        expect(component.find('a[href="/trailer"]')).toBeTruthy();
         expect(
             component.find('[data-testid="header-meta"] .title').text()
         ).toEqual("El Avión del Dinero");

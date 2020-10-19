@@ -47,5 +47,6 @@ describe("MoviesList", () => {
             </Provider>
         );
         expect(store.dispatch).toHaveBeenCalledTimes(1);
+        component.unmount();
     });
 });

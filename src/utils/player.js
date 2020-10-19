@@ -1,6 +1,6 @@
 import videojs from "video.js";
 import * as eme from "videojs-contrib-eme";
-require("video.js/dist/video-js.css");
+import * as styles from "video.js/dist/video-js.css";
 /**
  * Player Singleton
  */

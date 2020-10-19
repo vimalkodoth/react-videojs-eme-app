@@ -35,7 +35,7 @@ class Details extends Component {
     render() {
         const { match } = this.props;
         return (
-            <div>
+            <div className="details">
                 <Button onClick={this.goBack} show={true} prev={true} />
                 <DetailsHeader id={match.params.id} />
             </div>

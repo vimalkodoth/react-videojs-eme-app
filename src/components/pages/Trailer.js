@@ -29,12 +29,14 @@ class Trailer extends Component {
     };
     render() {
         return (
-            <React.Fragment>
+            <div className="trailer">
                 <Button onClick={this.goBack} show={true} prev={true} />
                 <VideoPlayer {...videoJsOptions} />;
-            </React.Fragment>
+            </div>
         );
     }
 }
+
+export const UnWrappedTrailer = Trailer;
 
 export default withBackButton(Trailer);
