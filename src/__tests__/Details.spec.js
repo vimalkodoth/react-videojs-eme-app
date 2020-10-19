@@ -9,6 +9,7 @@ import detailsItem from "./json/details-item.json";
 let store;
 const mockStore = configureStore([]);
 const originalConsoleError = console.error;
+
 describe("Details", () => {
     beforeEach(() => {
         console.error = jest.fn();
@@ -40,26 +41,6 @@ describe("Details", () => {
                 </MemoryRouter>
             </Provider>
         );
-        expect(component).toMatchSnapshot();
-    });
-
-    it("renders correctly with expected data", () => {
-        store.dispatch = jest.fn();
-        const component = render(
-            <Provider store={store}>
-                <MemoryRouter>
-                    <Details
-                        match={{
-                            params: { id: "el-avion-del-dinero" },
-                            isExact: true,
-                            path: "",
-                            url: ""
-                        }}
-                    />
-                </MemoryRouter>
-            </Provider>
-        );
-
         expect(component).toMatchSnapshot();
     });
 

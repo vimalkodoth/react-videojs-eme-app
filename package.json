@@ -61,6 +61,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.5.3",
     "jest-glamor-react": "^4.3.1",
+    "jest-serializer-html": "^7.0.0",
     "jsdoc": "^3.6.6",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.1.1",
@@ -79,7 +80,8 @@
   },
   "jest": {
     "snapshotSerializers": [
-      "jest-serializer-enzyme"
+      "jest-serializer-html",
+      "jest-glamor-react"
     ]
   },
   "browserslist": [
