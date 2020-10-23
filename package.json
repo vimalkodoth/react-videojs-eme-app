@@ -8,7 +8,6 @@
     "webpack-dev-server": "webpack-dev-server",
     "prod": "npm run webpack -- --env.mode production --env.API_BASE_URL=\"https://gizmo.rakuten.tv\"",
     "dev": "npm run webpack-dev-server -- --env.mode development --env.API_BASE_URL=\"https://localhost:8080\" --https",
-    "prod:typescript": "npm run prod -- --env.presets typescript",
     "lint": "eslint --ignore-path ./.gitignore --fix \"./src/*.{js,ts}\"",
     "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
     "prod:analyze": "npm run prod -- --env.presets analyze",
