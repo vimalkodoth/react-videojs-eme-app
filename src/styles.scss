@@ -12,7 +12,9 @@ body {
     background-color: #101010;
     color: #fff;
 }
-
+body #container {
+    margin: 0 auto;
+}
 @media (min-width: 1140px) {
     body #container {
         max-width: 1680px;
