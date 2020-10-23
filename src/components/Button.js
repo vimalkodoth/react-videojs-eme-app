@@ -38,9 +38,14 @@ const ButtonStyles = (props) => css`
     position: absolute;
     cursor: pointer;
     top: 50%;
-    margin-top: -24px;
-    width: 48px;
-    height: 48px;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
+    @media (min-width: 560px) {
+        margin-top: -24px;
+        width: 48px;
+        height: 48px;
+    }
     background-image: url(${arrow});
     background-color: rgba(255, 255, 0, 0.75);
     background-size: 110%;

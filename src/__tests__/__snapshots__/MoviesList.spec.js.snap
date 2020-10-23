@@ -2,7 +2,7 @@
 
 exports[`MoviesList renders correctly 1`] = `
 <div
-  class="css-1057yyp-MoviesListStyles"
+  class="css-k0kzju-MoviesListStyles"
 >
   <div
     class="css-1htuyjk-ListStyle"
@@ -402,12 +402,12 @@ exports[`MoviesList renders correctly 1`] = `
         </li>
       </ul>
       <div
-        class="css-pdebn7-ButtonStyles"
+        class="css-7x77wu-ButtonStyles"
         data-testid="button"
         style="display:none"
       />
       <div
-        class="css-nah102-ButtonStyles"
+        class="css-1gr9e02-ButtonStyles"
         data-testid="button"
         style="display:block"
       />

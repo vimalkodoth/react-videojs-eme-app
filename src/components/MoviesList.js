@@ -68,6 +68,12 @@ export default connect(
 )(withRouter(MoviesList));
 
 const MoviesListStyles = css`
+    & {
+        padding: 0 5px 15px;
+        @media (min-width: 560px) {
+            padding: 0 15px 25px;
+        }
+    }
     & h2 {
         font-size: 1em;
         @media (min-width: 880px) {

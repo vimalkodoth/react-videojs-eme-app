@@ -6,9 +6,9 @@ exports[`Button renders correctly 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "pdebn7-ButtonStyles",
+      "name": "7x77wu-ButtonStyles",
       "next": undefined,
-      "styles": "position:absolute;cursor:pointer;top:50%;margin-top:-24px;width:48px;height:48px;background-image:url();background-color:rgba(255,255,0,0.75);background-size:110%;background-repeat:no-repeat;background-position:-3px -2px;border-radius:50%;z-index:9999;
+      "styles": "position:absolute;cursor:pointer;top:50%;margin-top:-16px;width:32px;height:32px;@media (min-width:560px){margin-top:-24px;width:48px;height:48px;}background-image:url();background-color:rgba(255,255,0,0.75);background-size:110%;background-repeat:no-repeat;background-position:-3px -2px;border-radius:50%;z-index:9999;
     left: 5px;
   ;label:ButtonStyles;",
       "toString": [Function],
