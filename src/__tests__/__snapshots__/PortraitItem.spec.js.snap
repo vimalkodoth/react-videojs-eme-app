@@ -1,3 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PortraitItem renders correctly 1`] = `ShallowWrapper {}`;
+exports[`PortraitItem renders correctly 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  className="item"
+  css={
+    Object {
+      "name": "qbkfep-PortraitItemStyles",
+      "styles": "&.item{width:100%;border:5px solid;border-color:transparent;&:hover{border-color:yellow;}a{display:flex;}img{min-width:100%;max-width:100%;}};label:PortraitItemStyles;",
+    }
+  }
+>
+  <Link
+    to={
+      Object {
+        "pathname": "/details/mulan-718ddc0b-8c5f-4afd-8071-13592e4e21a1",
+        "state": Object {
+          "from": "/",
+        },
+      }
+    }
+  >
+    <Image
+      src="https://images-0.wuaki.tv/system/artworks/134332/master/mulan-2020-1601313907.jpeg"
+    />
+  </Link>
+</EmotionCssPropInternal>
+`;

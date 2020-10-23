@@ -126,7 +126,7 @@ module.exports = {
     // runner: "jest-runner",
 
     // The paths to modules that run some code to configure or set up the testing environment before each test
-    setupFiles: ["<rootDir>/test/setupTests.js"]
+    setupFiles: ["<rootDir>/test/setupTests.js"],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
     // setupFilesAfterEnv: [],
@@ -135,7 +135,7 @@ module.exports = {
     // slowTestThreshold: 5,
 
     // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-    // snapshotSerializers: ["jest-serializer-html", "jest-glamor-react"]
+    snapshotSerializers: ["enzyme-to-json/serializer"]
 
     // The test environment that will be used for testing
     // testEnvironment: "jest-environment-jsdom",

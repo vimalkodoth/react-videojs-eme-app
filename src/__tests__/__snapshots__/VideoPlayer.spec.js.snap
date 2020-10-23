@@ -1,78 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VideoPlayer renders correctly 1`] = `
-initialize {
-  "0": Object {
-    "attribs": Object {},
-    "children": Array [
-      Object {
-        "attribs": Object {
-          "data-vjs-player": "true",
-        },
-        "children": Array [
-          Object {
-            "attribs": Object {
-              "class": "video-js vjs-theme-rakuten full css-jre9ez-Player",
-            },
-            "children": Array [],
-            "name": "video",
-            "namespace": "http://www.w3.org/1999/xhtml",
-            "next": null,
-            "parent": [Circular],
-            "prev": null,
-            "type": "tag",
-            "x-attribsNamespace": Object {
-              "class": undefined,
-            },
-            "x-attribsPrefix": Object {
-              "class": undefined,
-            },
-          },
-        ],
-        "name": "div",
-        "namespace": "http://www.w3.org/1999/xhtml",
-        "next": null,
-        "parent": [Circular],
-        "prev": null,
-        "type": "tag",
-        "x-attribsNamespace": Object {
-          "data-vjs-player": undefined,
-        },
-        "x-attribsPrefix": Object {
-          "data-vjs-player": undefined,
-        },
-      },
-    ],
-    "name": "div",
-    "namespace": "http://www.w3.org/1999/xhtml",
-    "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
-      "children": Array [
-        [Circular],
-      ],
-      "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
-      "next": null,
-      "parent": null,
-      "prev": null,
-      "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
-    },
-    "type": "tag",
-    "x-attribsNamespace": Object {},
-    "x-attribsPrefix": Object {},
-  },
-  "_root": [Circular],
-  "length": 1,
-  "options": Object {
-    "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
-    "xml": false,
-  },
-}
+<div>
+  <div
+    data-vjs-player="true"
+  >
+    <video
+      class="video-js vjs-theme-rakuten full css-jre9ez-Player"
+    />
+  </div>
+</div>
 `;

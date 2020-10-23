@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button renders correctly 1`] = `ShallowWrapper {}`;
+exports[`Button renders correctly 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "pdebn7-ButtonStyles",
+      "next": undefined,
+      "styles": "position:absolute;cursor:pointer;top:50%;margin-top:-24px;width:48px;height:48px;background-image:url();background-color:rgba(255,255,0,0.75);background-size:110%;background-repeat:no-repeat;background-position:-3px -2px;border-radius:50%;z-index:9999;
+    left: 5px;
+  ;label:ButtonStyles;",
+      "toString": [Function],
+    }
+  }
+  data-testid="button"
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+/>
+`;

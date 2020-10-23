@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Trailer renders a videoplayer and button correctly 1`] = `ShallowWrapper {}`;
+exports[`Trailer renders a videoplayer and button correctly 1`] = `
+<div
+  className="trailer"
+>
+  <Button
+    onClick={[Function]}
+    prev={true}
+    show={true}
+  />
+  <VideoPlayer
+    autoplay={true}
+    controls={true}
+    keySystems={
+      Object {
+        "com.widevine.alpha": "https://widevine-proxy.appspot.com/proxy",
+      }
+    }
+    src="https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd"
+    type="application/dash+xml"
+  />
+  ;
+</div>
+`;
