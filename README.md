@@ -21,7 +21,6 @@ Note: Application runs on https
 ```
 "prod": #webpack production,
 "dev": #webpack dev,
-"prod:typescript": #prod with typescript,
 "prod:analyze": #analyze prod build
 "prod:compress": #compress prod build
 "test": "jest" #tests
