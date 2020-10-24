@@ -47,6 +47,17 @@ class App extends Component {
                                         />
                                     )}
                                 />
+                                <Route
+                                    component={(props) => (
+                                        //Fallbabck default route is set to Home instead of a 404 component
+                                        <AsyncRouteWithErrorBoundary
+                                            props={props}
+                                            loadingPromise={import(
+                                                "./components/pages/Home"
+                                            )}
+                                        />
+                                    )}
+                                />
                             </Switch>
                         </div>
                     </div>
