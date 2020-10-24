@@ -1,8 +1,13 @@
 {
     "base_url": "https://gizmo.rakuten.tv",
-    "drm": {
-        "manifest": "https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/",
-        "license": "https://widevine-proxy.appspot.co/"
+    "defaultPlayerConfig": {
+        "src": "https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd",
+        "autoplay": true,
+        "controls": true,
+        "type": "application/dash+xml",
+        "keySystems": {
+            "com.widevine.alpha": "https://widevine-proxy.appspot.com/proxy"
+        }
     },
     "home": {
         "list": {

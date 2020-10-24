@@ -3,18 +3,7 @@ import VideoPlayer from "./../VideoPlayer";
 import Button from "./../Button";
 import withBackButton from "./../hocs/withBackButton";
 import { func } from "prop-types";
-
-//Config needs to be moved from component
-const videoJsOptions = {
-    src:
-        "https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd",
-    autoplay: true,
-    controls: true,
-    type: "application/dash+xml",
-    keySystems: {
-        "com.widevine.alpha": "https://widevine-proxy.appspot.com/proxy"
-    }
-};
+import config from "../../config.json";
 
 /** Trailer Page Component */
 class Trailer extends Component {
@@ -28,6 +17,8 @@ class Trailer extends Component {
         this.props.onBackButtonClicked(e);
     };
     render() {
+        //Take default configuration for player instead of route as we are playing same stream for all assets
+        const videoJsOptions = config.defaultPlayerConfig || {};
         return (
             <div className="trailer">
                 <Button onClick={this.goBack} show={true} prev={true} />

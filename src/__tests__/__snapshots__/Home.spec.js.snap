@@ -24,7 +24,7 @@ exports[`Home renders correctly 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "lupm17",
+              "key": "8735jj",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Home renders correctly 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "lupm17",
+            "key": "8735jj",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -2031,7 +2031,7 @@ exports[`Home renders correctly 1`] = `
                     "entries": Array [
                       Object {
                         "hash": "",
-                        "key": "lupm17",
+                        "key": "8735jj",
                         "pathname": "/",
                         "search": "",
                         "state": undefined,
@@ -2045,7 +2045,7 @@ exports[`Home renders correctly 1`] = `
                     "listen": [Function],
                     "location": Object {
                       "hash": "",
-                      "key": "lupm17",
+                      "key": "8735jj",
                       "pathname": "/",
                       "search": "",
                       "state": undefined,
@@ -2057,7 +2057,7 @@ exports[`Home renders correctly 1`] = `
                 location={
                   Object {
                     "hash": "",
-                    "key": "lupm17",
+                    "key": "8735jj",
                     "pathname": "/",
                     "search": "",
                     "state": undefined,
