@@ -1,5 +1,3 @@
-import config from "../config.json";
-
 const defaultParams = {
     classification_id: 5,
     device_identifier: "web",
