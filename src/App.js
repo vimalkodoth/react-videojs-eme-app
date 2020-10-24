@@ -1,7 +1,7 @@
 import { hot } from "react-hot-loader/root";
 import React, { Component } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { css } from "@emotion/core";
 import store from "./store";
 import AsyncRouteWithErrorBoundary from "./components/AsyncRouteWithErrorBoundary";
@@ -47,17 +47,10 @@ class App extends Component {
                                         />
                                     )}
                                 />
-                                <Route
-                                    component={(props) => (
-                                        //Fallbabck default route is set to Home instead of a 404 component
-                                        <AsyncRouteWithErrorBoundary
-                                            props={props}
-                                            loadingPromise={import(
-                                                "./components/pages/Home"
-                                            )}
-                                        />
-                                    )}
-                                />
+                                {/* We could have a 404 fallback. For simplicity, we will redirect to home for non-matching routes  */}
+                                <Route>
+                                    <Redirect to="/" />
+                                </Route>
                             </Switch>
                         </div>
                     </div>
