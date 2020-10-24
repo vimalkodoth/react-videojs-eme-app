@@ -1,5 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
+import { render } from "enzyme";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
@@ -26,7 +26,7 @@ describe("Home", () => {
     });
 
     it("renders correctly", () => {
-        const component = mount(
+        const component = render(
             <Provider store={store}>
                 <MemoryRouter>
                     <Home />
