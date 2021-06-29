@@ -1,9 +1,7 @@
 import videojs from "video.js";
 import * as eme from "videojs-contrib-eme";
 import * as styles from "video.js/dist/video-js.css";
-/**
- * Player Singleton
- */
+
 const player = {
     player: null,
     init(node, config, onPlayerReady) {

@@ -3,9 +3,6 @@ import { css } from "@emotion/core";
 import arrow from "./../static/img/arrow.svg";
 import { bool, func } from "prop-types";
 
-/**
- * Button Component
- */
 class Button extends Component {
     static propTypes = {
         onClick: func,

@@ -5,9 +5,7 @@ import DetailsHeader from "./../DetailsHeader";
 import Button from "./../../components/Button";
 import withBackButton from "./../hocs/withBackButton";
 import { func, object } from "prop-types";
-/**
- *  Details Page Component
- */
+
 class Details extends Component {
     static propTypes = {
         onBackButtonClicked: func,

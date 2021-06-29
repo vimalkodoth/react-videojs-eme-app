@@ -18,11 +18,4 @@ const movieDetails = (state = {}, action) => {
     return state;
 };
 
-const rootReducer = (state = DEFAULT_STATE, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
-
-export default combineReducers({ rootReducer, moviesList, movieDetails });
+export default combineReducers({ moviesList, movieDetails });

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { css } from "@emotion/core";
 import Button from "./Button";
 import PropTypes, { node } from "prop-types";
-
-/** HorizontalList Component */
 class HorizontalList extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])

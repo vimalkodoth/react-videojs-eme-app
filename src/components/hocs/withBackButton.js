@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { object } from "prop-types";
 
-/** withBackButton HOC */
 const withBackButton = (WrappedComponent) => {
     const Sub = class extends Component {
         onBackButtonClicked = () => {

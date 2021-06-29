@@ -5,7 +5,6 @@ import withBackButton from "./../hocs/withBackButton";
 import { func } from "prop-types";
 import config from "../../config.json";
 
-/** Trailer Page Component */
 class Trailer extends Component {
     static propTypes = {
         onBackButtonClicked: func

@@ -30,16 +30,12 @@ export function fetchMoviesList() {
 
     return async (dispatch) => {
         try {
-            const promises = ids.map((id) => {
+            const reqs = ids.map((id) => {
                 const source = endpoints.list.replace("{id}", id);
                 return apiClient.call(source);
             });
-            for (let p of promises) {
-                const response = await p;
-                if (response) {
-                    dispatch(addMoviesList(response.data));
-                }
-            }
+            const responses = await Promise.all(reqs);
+            responses.forEach((res)=> dispatch(addMoviesList(res.data)));
         } catch (e) {
             console.log(e);
         }

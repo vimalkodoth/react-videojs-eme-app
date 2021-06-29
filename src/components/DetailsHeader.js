@@ -5,9 +5,6 @@ import RoundedButton from "./RoundedButton";
 import { withRouter } from "react-router-dom";
 import { string, object } from "prop-types";
 
-/**
- * Details Header Component
- */
 class DetailsHeader extends Component {
     static propTypes = {
         id: string,

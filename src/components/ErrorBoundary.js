@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes, { node } from "prop-types";
 import { css } from "@emotion/core";
 
-/** Error Boundary Component */
 class ErrorBoundary extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])

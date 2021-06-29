@@ -3,7 +3,6 @@ import HorizontalList from "./HorizontalList";
 import { css } from "@emotion/core";
 import PropTypes, { node } from "prop-types";
 
-/** List Component */
 class List extends Component {
     static propTypes = {
         children: PropTypes.oneOfType([PropTypes.arrayOf(node), node])

@@ -2,9 +2,6 @@ import React from "react";
 import { css } from "@emotion/core";
 import player from "./../utils/player";
 
-/**
- * VideoPlayer Component
- */
 class VideoPlayer extends React.Component {
     player = null;
 

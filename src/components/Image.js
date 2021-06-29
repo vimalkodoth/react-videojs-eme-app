@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { css } from "@emotion/core";
 import spacerImage from "./../static/img/spacer-image.png";
 import { string } from "prop-types";
-/** Image Component */
 class Image extends Component {
     static propTypes = {
         src: string
