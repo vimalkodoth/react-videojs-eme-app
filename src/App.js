@@ -5,59 +5,58 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { css } from "@emotion/core";
 import store from "./store";
 import AsyncRouteWithErrorBoundary from "./components/AsyncRouteWithErrorBoundary";
-class App extends Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <Provider store={store}>
-                    <div className="app" css={AppStyles}>
-                        <div className="contents" css={ContentsStyle}>
-                            <Switch>
-                                <Route
-                                    exact
-                                    path="/"
-                                    component={(props) => (
-                                        <AsyncRouteWithErrorBoundary
-                                            props={props}
-                                            loadingPromise={import(
-                                                "./components/pages/Home"
-                                            )}
-                                        />
-                                    )}
-                                />
-                                <Route
-                                    path="/details/:id"
-                                    component={(props) => (
-                                        <AsyncRouteWithErrorBoundary
-                                            props={props}
-                                            loadingPromise={import(
-                                                "./components/pages/Details"
-                                            )}
-                                        />
-                                    )}
-                                />
-                                <Route
-                                    path="/trailer"
-                                    component={(props) => (
-                                        <AsyncRouteWithErrorBoundary
-                                            props={props}
-                                            loadingPromise={import(
-                                                "./components/pages/Trailer"
-                                            )}
-                                        />
-                                    )}
-                                />
-                                {/* We could have a 404 fallback. For simplicity, we will redirect to home for non-matching routes  */}
-                                <Route>
-                                    <Redirect to="/" />
-                                </Route>
-                            </Switch>
-                        </div>
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <div className="app" css={AppStyles}>
+                    <div className="contents" css={ContentsStyle}>
+                        <Switch>
+                            <Route
+                                exact
+                                path="/"
+                                component={(props) => (
+                                    <AsyncRouteWithErrorBoundary
+                                        props={props}
+                                        loadingPromise={import(
+                                            "./components/pages/Home"
+                                        )}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/details/:id"
+                                component={(props) => (
+                                    <AsyncRouteWithErrorBoundary
+                                        props={props}
+                                        loadingPromise={import(
+                                            "./components/pages/Details"
+                                        )}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/trailer"
+                                component={(props) => (
+                                    <AsyncRouteWithErrorBoundary
+                                        props={props}
+                                        loadingPromise={import(
+                                            "./components/pages/Trailer"
+                                        )}
+                                    />
+                                )}
+                            />
+                            {/* We could have a 404 fallback. For simplicity, we will redirect to home for non-matching routes  */}
+                            <Route>
+                                <Redirect to="/" />
+                            </Route>
+                        </Switch>
                     </div>
-                </Provider>
-            </BrowserRouter>
-        );
-    }
+                </div>
+            </Provider>
+        </BrowserRouter>
+    );
 }
 const AppStyles = css`
     margin: 0px auto;
